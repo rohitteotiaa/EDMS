@@ -1,0 +1,121 @@
+{% include "header3.html" %}
+<style>
+   .pagination {
+      display: flex;
+      list-style: none;
+      padding: 0;
+   }
+
+   .pagination li {
+      margin: 0 5px;
+   }
+
+   .pagination a {
+      text-decoration: none;
+      padding: 5px 10px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+   }
+
+   .pagination .active a {
+      background-color: #007bff;
+      color: #fff;
+   }
+</style>
+<div id="page-wrapper">
+<div id="page-inner">
+<div class="row">
+  <div class="col-md-12">
+      <h1 class="page-head-line">View User</h1>
+      <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+  </div>
+</div>
+{% include 'basicuser/navbar_basicuser.html' %}
+                
+
+               
+<br>
+<div class="col-auto text-right float-right ml-auto">
+<a href="{% url 'user-download-pdf2' %}" class="btn btn-outline-primary mr-2" target="_blank"><i class="fa fa-download"></i> Download/Print</a>
+
+</div>
+<div class="row">
+<div class="col-sm-12">
+   <div class="card card-table">
+      <div class="card-body">
+         <div class="table-responsive">
+            <table class="table table-hover table-center mb-0 datatable" style="white-space: nowrap; overflow-x: auto; display: block;">
+               <thead>
+                  <tr>
+                     <th>ID</th>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Gender</th>
+                     <th>Userame</th>
+                     <th>Address</th>
+                     <th>Created_at</th>
+                     <th>Updated_at</th>
+                     <th class="text-right">Action</th>
+                  </tr>
+               </thead>
+               <tbody style="width: 100%;">
+                           {% for i in users %}
+                        
+                           <tr>
+                              <td>{{i.id}}</td>
+                              <td>  
+                                 {{i.admin.first_name}}&nbsp;{{i.admin.last_name}}
+                                 
+                              </td>
+                              <td>{{i.admin.email}}</td>
+                              <td>{{i.gender}}</td>
+                              <td>{{i.admin.username}}</td>
+                              <td>{{i.address}}</td>
+                              <td>{{i.created_at}}</td>
+                              <td>{{i.updated_at}}</td>
+                              <td class="text-right">
+                                 <div class="actions">
+                                    <a href="{% url 'edituser3' i.id %}" class="btn btn-sm bg-success-light mr-2" style="color: blue;">
+                                    <i class="fa fa-edit" style="font-size:18px"></i>
+                                    </a>
+                                    <a href="{% url 'delete_user3' i.admin.id %}" class="btn btn-sm bg-danger-light" style="color: red;">
+                                       <i class="fa fa-trash-o" style="font-size:18px"></i>
+                                    </a>
+                                 </div>
+                              </td>
+                           </tr>
+                           {% endfor %}
+                           </tbody>
+                        </table>
+                        <center>
+                           <ul class="pagination">
+                              {% if users.has_previous %}
+                                  <li><a href="?page=1">First</a></li>
+                                  <li><a href="?page={{ users.previous_page_number }}">Previous</a></li>
+                              {% endif %}
+                      
+                              {% for i in users.paginator.page_range %}
+                                  {% if users.number == i %}
+                                      <li class="active"><a href="?page={{ i }}">{{ i }}</a></li>
+                                  {% else %}
+                                      <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                  {% endif %}
+                              {% endfor %}
+                      
+                              {% if users.has_next %}
+                                  <li><a href="?page={{ users.next_page_number }}">Next</a></li>
+                                  <li><a href="?page={{ users.paginator.num_pages }}">Last</a></li>
+                              {% endif %}
+                          </ul>
+                        </center>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    
+
+        {% include "footer.html" %}

@@ -1,0 +1,363 @@
+﻿{% include "header4.html" %}
+        <!-- /. NAV SIDE  -->
+        <style>
+            .tagged-button {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #007bff;
+              color: #fff;
+              text-decoration: none;
+              border-radius: 5px;
+              font-size: 16px;
+              font-weight: bold;
+            }
+          
+            .tagged-button:hover {
+              background-color: #0056b3;
+            }
+          </style>
+          
+        
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">DASHBOARD</h1>
+                        <h1 class="page-subhead-line">We Are Getting Ready Everything For You.Oour In To Provide Information On Your Finger Tipes ! </h1>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                {% include 'users/navbar_user.html' %}
+                
+
+               
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="main-box mb-red">
+                            <a href="#">
+                                <i class="fa fa-bolt fa-5x"></i>
+                                <h3>{{basicuser_count}}</h3>
+                                <h5>BasicUser</h5>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="main-box mb-dull">
+                            <a href="#">
+                                <i class="fa fa-plug fa-5x"></i>
+                                <h3>{{employee_count}}</h3>
+                                 <h5>Total Employees</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="main-box mb-pink">
+                            <a href="#">
+                                <i class="fa fa-dollar fa-5x"></i>
+                                {% comment %} <h3>{{basicuser_count}}</h3> {% endcomment %}
+                                 <h5>Pending Employees</h5>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /. ROW  -->
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div id="reviews" class="carousel slide" data-ride="carousel">
+
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+
+                                            <div class="col-md-10 col-md-offset-1">
+
+                                                <h4><i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. <i class="fa fa-quote-right"></i></h4>
+                                                <div class="user-img pull-right">
+                                                    <img src="/static/assets/img/user.gif" alt="" class="img-u image-responsive" />
+                                                </div>
+                                                <h5 class="pull-right"><strong class="c-black">Lorem Dolor</strong></h5>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="col-md-10 col-md-offset-1">
+
+                                                <h4><i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. <i class="fa fa-quote-right"></i></h4>
+                                                <div class="user-img pull-right">
+                                                    <img src="/static/assets/img/user.png" alt="" class="img-u image-responsive" />
+                                                </div>
+                                                <h5 class="pull-right"><strong class="c-black">Lorem Dolor</strong></h5>
+                                            </div>
+
+                                        </div>
+                                        <div class="item">
+                                            <div class="col-md-10 col-md-offset-1">
+
+                                                <h4><i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing  Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. <i class="fa fa-quote-right"></i></h4>
+                                                <div class="user-img pull-right">
+                                                    <img src="/static/assets/img/user.gif" alt="" class="img-u image-responsive" />
+                                                </div>
+                                                <h5 class="pull-right"><strong class="c-black">Lorem Dolor</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--INDICATORS-->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#reviews" data-slide-to="0" class="active"></li>
+                                        <li data-target="#reviews" data-slide-to="1"></li>
+                                        <li data-target="#reviews" data-slide-to="2"></li>
+                                    </ol>
+                                    <!--PREVIUS-NEXT BUTTONS-->
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- /. ROW  -->
+                        <hr />
+
+                        <div class="panel panel-default">
+
+                            <div id="carousel-example" class="carousel slide" data-ride="carousel" style="border: 5px solid #000;">
+
+                                <div class="carousel-inner">
+                                    <div class="item active">
+
+                                        <img src="/static/assets/img/redfort.jpg" alt="" />
+
+                                    </div>
+                                    <div class="item">
+                                        <img src="/static/assets/img/sansad bhawan.jpg" alt="" />
+
+                                    </div>
+                                    <div class="item">
+                                        <img src="/static/assets/img/gandhi ji.jpg" alt="" />
+
+                                    </div>
+                                </div>
+                                <!--INDICATORS-->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example" data-slide-to="2"></li>
+                                </ol>
+                                <!--PREVIUS-NEXT BUTTONS-->
+                                <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.REVIEWS &  SLIDESHOW  -->
+                    <div class="col-md-4">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Recent Chat History
+                            </div>
+                            <div class="panel-body" style="padding: 0px;">
+                                <div class="chat-widget-main">
+
+
+                                    <div class="chat-widget-left">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                    <div class="chat-widget-name-left">
+                                        <h4>Amanna Seiar</h4>
+                                    </div>
+                                    <div class="chat-widget-right">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                    <div class="chat-widget-name-right">
+                                        <h4>Donim Cruseia </h4>
+                                    </div>
+                                    <div class="chat-widget-left">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                    <div class="chat-widget-name-left">
+                                        <h4>Amanna Seiar</h4>
+                                    </div>
+                                    <div class="chat-widget-right">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                    <div class="chat-widget-name-right">
+                                        <h4>Donim Cruseia </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter Message" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="button">SEND</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--/.Chat Panel End-->
+                </div>
+                <!-- /. ROW  -->
+
+
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                <h4 class="list-group-item-heading">LIST GROUP HEADING</h4>
+                                <p class="list-group-item-text" style="line-height: 30px;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </a>
+                        </div>
+                        <br />
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <i class="fa fa-bell fa-fw"></i>Notifications Panel
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="list-group">
+
+                                    <a href="#" class="list-group-item">
+                                        </i>3 New Followers
+                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        Message Sent
+                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                       New Task
+                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        Server Rebooted
+                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        Server Crashed!
+                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        Server Not Responding
+                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                    </span>
+                                    </a>
+
+                                    <a href="#" class="list-group-item">
+                                        Server Crashed!
+                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        Server Not Responding
+                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                    </span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        </i>New Order Placed
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                                    </a>
+                                </div>
+                                <!-- /.list-group -->
+                                {% comment %} <a href="#" class="btn btn-info btn-block">View All Alerts</a> {% endcomment %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--/.Row-->
+                                <!--/.Row-->
+                <hr />
+                <div class="row" style="padding-bottom: 100px;">
+                    <div class="col-md-6">
+                        <div id="comments-sec">
+                            <h4><strong>Compose Support Ticket </strong></h4>
+                            <hr />
+
+                        <form method = 'POST'>
+                            {% csrf_token %}
+
+
+                            <div class="form-group  ">
+                                <label>Please Write a Subject Line</label>
+                                <input type="text" class="form-control" required="required" placeholder="Enter Subject Of Ticket" name='subject'/>
+                            </div>
+                            <div class="form-group ">
+                                <label>Please Enter Issue</label>
+                                <textarea class="form-control" rows="8" name='message'></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Compose &amp; Send Ticket</button>
+                            </div>
+                        </form>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-back noti-box">
+                            <span class="icon-box bg-color-black">
+                                <i class="fa fa-bicycle"></i>
+                            </span>
+                            <div class="text-box">
+                                <p class="main-text">52 Important Issues to Fix </p>
+                                <p>Please fix these issues to work smooth</p>
+                                <p>Time Left: 30 mins</p>
+                                <hr />
+                                <p>
+                                    <span class=" color-bottom-txt"><i class="fa fa-edit"></i>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
+                             
+                                    </span>
+
+
+                                </p>
+                                <hr />
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.ROW-->
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+
+
+    {% include "footer.html" %}

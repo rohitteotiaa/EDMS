@@ -1,0 +1,75 @@
+{% include 'header4.html' %}
+
+
+
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        {% include 'users/navbar_user.html' %}
+                
+
+               
+                <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">Download ID Card</h1>
+                <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+ 
+            </div>
+        </div>
+        <div class="col-auto text-right float-right ml-auto">
+            <a href="{% url 'download_id_card_download' %}" class="btn btn-outline-primary mr-2" target="_blank"><i class="fa fa-download"></i> Download/Print</a>
+            
+        </div>
+        
+        <div class="hall-ticket">
+            <div class="header">
+                <h1> HALL TICKET</h1>
+                <h5><b><span style='color:red;'>ELECTION DATE: </span> 31st December, 2023</b></h5>
+            </div><br>
+            <div style='text-align:center;'>This is dummy text , you can replace it with your original text.</div><br>
+            <div style='border:1px solid black; text-align:center;' ><h4>PERSONAL DETAILS</h4></div><br>
+            
+            {% comment %} <div style=' padding-top:10%; padding-left:70%'></div> {% endcomment %}
+            <div>
+                {% comment %} <div class='left-container' style='margin-left:70%; margin-top:10%; width:50%' ><span style='border:2px solid black; padding-top:12%; padding-left:4%'>sdfhsfjkhdsf</span></div> {% endcomment %}
+                <div class="details" style='padding-left:5%; width:50%;'>
+                
+                   
+                    <p>Name: {{ member.name }}</p>
+                    <p>Employee Code:{{ member.emp_Code }}</p>
+                    <p>Designation: {{ member.designation }} </p>
+                    <p>Zone: {% if member.zone %}{{ member.zone.name }}{% else %}N/A{% endif %}</p>
+                    <p>Section: {% if member.section %}{{ member.section.name }}{% else %}N/A{% endif %}</p>
+                    <p>Counter Number: {% if member.counter %}{{ member.counter.name }}{% else %}N/A{% endif %}</p>
+                    <p>Room Number: {% if member.room_number %}{{ member.room_number.name }}{% else %}N/A{% endif %}</p>
+                    <p>Center: Exam Center 123</p>
+                    <p>Reporting Time: 9:00 AM</p>
+                </div>
+            </div><br>
+            <div style='border:1px solid black;  text-align:center;' ><h4>TEAM MEMBERS</h4></div><br>
+            <div class="details" style='padding-left:5%;'>
+                {% if team_members %}
+                    <ul>
+                        {% for team_member in team_members %}
+                            <li>{{ team_member.name }} - {{ team_member.designation }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No team members assigned in the same zone, section, room number, and counter.</p>
+                {% endif %}
+
+            </div>
+            <div style='border:1px solid black;  text-align:center;' ><h4>INSTRUCTIONS</h4></div><br>
+            <div class="instructions" style='padding-left:5%;'>
+                
+                <p>Please follow the guidelines provided:</p>
+                <ul>
+                    <li>Arrive at least 30 minutes before the scheduled time.</li>
+                    <li>Bring a valid ID card for verification.</li>
+                    <li>Follow all security protocols.</li>
+                    <!-- Add more instructions as needed -->
+                </ul>
+            </div>
+        </div><br><br><br><br><br><br><br><br><br><br><br>
+   {% include "footer.html" %}

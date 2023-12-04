@@ -1,0 +1,126 @@
+{% include "header2.html" %}
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">ADD USER</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+                {% include 'superuser/navbar_superuser.html' %}
+                
+
+               
+                <br>
+                <!-- /. ROW  -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="panel panel-info">
+                             <div class="panel-heading">
+                                ADD USER
+                             </div>
+                             {% if messages %}
+                             {% for message in messages %}
+                              {% if message.tags == 'error' %}
+                           <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                             {{message}}
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                             </button>
+                           </div>
+                              {% endif %}
+                             {% endfor %}
+                           {% endif %}
+                             <div class="panel-body">
+                             <form method="POST" action="{% url 'addcustomuser2' %}" >
+                                {% csrf_token %}
+                                <div class="row"> 
+                                   <div class="col-12">
+                                      <h5 class="form-title">&nbsp;&nbsp;&nbsp;&nbsp;<span>User's Information</span></h5>
+                                   </div>
+                                   <!-- <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Upload Profile Pic</label>
+                                       <input type="file" class="form-control" name="profile_pic" required>
+                                    </div>
+                                 </div> -->
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>First Name</label>
+                                         <input type="text" class="form-control" name="first_name" required>
+                                      </div>
+                                   </div>
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Last Name</label>
+                                         <input type="text" class="form-control" name="last_name" required>
+                                      </div>
+                                   </div>
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Email</label>
+                                         <input type="text" class="form-control" name="email" required>
+                                      </div>
+                                   </div>
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Username</label>
+                                         <input type="text" class="form-control" name="username" required>
+                                      </div>
+                                   </div>
+                                  
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Password</label>
+                                         <input type="password" class="form-control" name="password" required>
+                                      </div>
+                                   </div>
+  
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Contact Number</label>
+                                         <input type="text" class="form-control" name="contact_number" required>
+                                      </div>
+                                   </div>
+  
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>PNO Number</label>
+                                         <input type="text" class="form-control" name="pno_number" required>
+                                      </div>
+                                   </div>
+  
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Gender</label>
+                                         <select class="form-control" name="gender" required>
+                                            <option>Select Gender</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Others">Others</option>
+                                         </select>
+                                      </div>
+                                   </div>
+                                   <div class="col-sm-11">
+                                      <div class="form-group">
+                                         <label>Address</label>
+                                         <textarea class="form-control" name="address" required></textarea>
+                                      </div>
+                                   </div>
+                                   <div class="col-12">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                   </div>
+                                </div>
+                             </form>
+                          </div>
+                        </div>
+                     </div>
+                     </div>
+                     </div>
+                     </div>
+                     </div>             
+                     </div>             
+                     </div>  
+                     <br><br><br><br><br><br><br><br><br>                      
+                     {% include "footer.html" %}

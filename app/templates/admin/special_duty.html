@@ -1,0 +1,82 @@
+{% include "header.html" %}
+        <!-- /. NAV SIDE  -->
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+    
+            h1 {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+            }
+    
+            table {
+                border-collapse: collapse;
+                width: 80%;
+                margin: 20px auto;
+            }
+    
+            table, th, td {
+                border: 1px solid #ccc;
+            }
+    
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+    
+            th {
+                background-color: #333;
+                color: #fff;
+            }
+    
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+    
+            tr:nth-child(odd) {
+                background-color: #fff;
+            }
+        </style>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Assign Special Duty View</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+                {% include 'admin/navbar_admin.html' %}
+                
+
+               
+                <br>
+    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area Name</th>
+                                <th>All Members</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for duty_member in all_duty_members %}
+                                <tr>
+                                    <td>{{ duty_member.area_name }}</td>
+                                    <td>{{ duty_member.member_name }} ({{ duty_member.member_designation }})</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+                {% include "footer.html" %}

@@ -1,0 +1,33 @@
+{% include 'header4.html' %}
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">Self Duty</h1>
+                <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+ 
+            </div>
+        </div>
+
+        {% include 'users/navbar_user.html' %}
+                
+
+               
+        <br>
+    
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    
+    <form method="post" action="{% url 'admit_card_search' %}">
+        {% csrf_token %}
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" required><br>
+        
+        <button type="submit">Access Admit Card</button>
+    </form>
+
+</body>
+
+
+</html>

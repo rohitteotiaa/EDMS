@@ -1,0 +1,27 @@
+{% include "header.html" %}
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Upload Employees file here !</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+                {% include 'admin/navbar_admin.html' %}
+                
+
+               
+                <br>
+                <!-- /. ROW  -->
+
+                <h1>Upload Employee CSV/EXCEL File</h1><br><br><br><br>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                   <center> {{ form.as_p }} 
+                    <button type="submit">Upload</button></center>
+                </form>
+
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                {% include "footer.html" %}

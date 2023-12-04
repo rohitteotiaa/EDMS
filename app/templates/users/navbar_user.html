@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/static/style5.css">
+
+<nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">VenusGlobal</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">VenusGlobal</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="{% url 'user_home4' %}">Home/होम </a></li>
+          {% comment %} <li>
+            <a href="#">HTML & CSS</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Login Forms</a></li>
+              <li><a href="#">Card Design</a></li>
+              <li class="more">
+                <span><a href="#">More</a>
+                <i class='bx bxs-chevron-right arrow more-arrow'></i>
+              </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="#">Neumorphism</a></li>
+                  <li><a href="#">Pre-loader</a></li>
+                  <li><a href="#">Glassmorphism</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li> {% endcomment %}
+          <li>
+            <a href="#">Admin Card</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+               <li><a href="{% url 'admit_card_search' %}">Download I'd Card/आईडी कार्ड डाउनलोड करें</a></li>
+            
+               </ul>
+          </li>
+
+          <li>
+            <a href="#">Messages</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+                <li><a href="{% url 'message_to_superuser4' %}">Message To SuperUser/संदेश सुपर व्यवस्थापक को</a></li>
+                <li><a href="{% url 'message_to_basicuser4' %}">Message To User/संदेश उपयोगकर्ता को</a></li>
+                <li><a href="{% url 'message_from_admin4' %}">Message From Admin/मास्टर व्यवस्थापक से संदेश</a></li>
+                <li><a href="{% url 'message_from_superuser4' %}">Message from SuperUser/सुपर व्यवस्थापक से संदेश</a></li>
+                <li><a href="{% url 'message_from_basicuser4' %}">Message from BasicUser/व्यवस्थापक से संदेश</a></li>
+                    
+            </ul>  
+          </li>
+
+          <li>
+            <a href="{% url 'vehicle_alloted' %}">Vehicle Alloted Details/वाहन आवंटित विवरण</a>
+              
+          </li> 
+
+        </ul>
+      </div>
+      <div class="search-box">
+        
+        <a href="{% url 'logout' %}"><i class="fa fa-sign-out" style="font-size:36px"></i></a>
+
+      </div>
+    </div>
+  </nav>
+  <script src="/static/script5.js"></script>

@@ -1,0 +1,43 @@
+
+<div class="row">
+    <div class="col-sm-12">
+       <div class="card card-table">
+          <div class="card-body">
+             <div class="table-responsive">
+                <table class="table table-hover table-center mb-0 datatable" style="display: block; overflow-x: auto; white-space: nowrap;">
+                   <thead>
+                        <tr>
+                            <th>Zone name</th>
+                            <th>Section name</th>
+                            <th>Room name</th>
+                            <th>Counter number</th>
+                            <th>Assigned Members</th>
+                        </tr>
+                    </thead>
+    <tbody>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.zone.name }}</td>
+                <td>{{ item.section.name }}</td>
+                <td>{{ item.room.name }}</td>
+                <td>{{ item.counter.name }}</td>
+                <td>
+                    {% for assignment in item.assigned_members %}
+                        {{ assignment.member.name }} ({{ assignment.member.designation }}) <br>
+                    {% empty %}
+                        No assigned members
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Unassigned Members Left</h2>
+<p>Managers not assigned: {{ unassigned_managers }}
+<p>Team Leaders not assigned: {{ unassigned_team_leaders }}</p>
+{% comment %} <p>Zonal Head not assigned: {{ unassigned_Zonal_Head }}</p>
+<p>CEO not assigned: {{ unassigned_CEO }}</p>
+<p>GM not assigned: {{ Unassigned_GM }}</p>
+<p>DT-Tech not assigned: {{ Unassigned_DT_Tech  }}</p> {% endcomment %}
+<p>Clerk not assigned: {{ unassigned_clerk }}</p>

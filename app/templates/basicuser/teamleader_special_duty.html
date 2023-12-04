@@ -1,0 +1,96 @@
+{% include "header3.html" %}
+        <!-- /. NAV SIDE  -->
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 50px;
+            }
+            
+            h1 {
+                color: #333;
+            }
+            
+            form {
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: #333;
+            }
+            
+            select,
+            input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            #manual-assignment {
+                display: block;
+            }
+            
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+            
+            #submit-btn {
+                background-color: #4CAF50;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            
+            #submit-btn:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            
+        </style>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Assign Team Leader special duty</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+                {% include 'basicuser/navbar_basicuser.html' %}
+                
+
+               
+                <br>
+    <!-- Team Leader Form Code -->
+    <form method="post" action="{% url 'unassign_teamleader_special_duty' %}">
+        {% csrf_token %}
+        <div>
+            {{ form.team_leaders.label_tag }}
+            {{ form.team_leaders }}
+        </div>
+        <div>
+            {{ form.area_name.label_tag }}
+            {{ form.area_name }}
+        </div>
+        <div>
+            <button type="submit">Assign team leader Special Duty</button>
+        </div>
+    </form>
+    
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    {% include "footer.html" %}

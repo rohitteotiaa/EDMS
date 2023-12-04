@@ -1,0 +1,165 @@
+{% include "header.html" %}
+        <!-- /. NAV SIDE  -->
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 50px;
+            }
+            
+            h1 {
+                color: #333;
+            }
+            
+            form {
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: #333;
+            }
+            
+            select,
+            input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            #manual-assignment {
+                display: block;
+            }
+            
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+            
+            #submit-btn {
+                background-color: #4CAF50;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            
+            #submit-btn:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            
+        </style>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Assign data</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+                {% include 'admin/navbar_admin.html' %}
+                
+
+               
+                <br>
+                <!-- /. ROW  -->
+
+
+                <form method="post" id="assignment-form">
+                    {% csrf_token %}
+                    <!-- Radio buttons for manual or automatic assignment -->
+                    <label for="assignment-type">Assignment Type:</label>
+                    <input type="radio" name="assignment-type" value="manual" checked> Manual
+                    <input type="radio" name="assignment-type" value="automatic"> Automatic
+                    <br><br><br>
+                    <!-- Zone, Section, and Room Number selection as before -->
+                    <label for="zone">Select Zone:</label>
+                    <select name="zone" id="zone">
+                        <option>A</option>
+                        <option>B</option>
+                    </select><br>
+            
+                    <label for="section">Select Section:</label>
+                    <select name="section" id="section">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select><br>
+            
+                    <label for="room_number">Select Room Number:</label>
+                    <select name="room_number" id="room_number">
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                    </select><br>
+            
+                    <!-- Counter selection for manual assignment (visible by default) -->
+                    <div id="manual-assignment">
+                        <label for="counter">Select Counter:</label>
+                        <select name="counter" id="counter">
+                            {% for available_counter in available_counter %}
+                                <option value="{{ available_counter.id }}">{{ available_counter.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+            
+                    <!-- Submit button -->
+                    <input type="submit" id="submit-btn" value="Assign">
+                </form>
+            
+                <script>
+                    const assignmentTypeRadio = document.querySelectorAll('input[name="assignment-type"]');
+                    const submitBtn = document.getElementById('submit-btn');
+                    const zoneSelect = document.getElementById('zone');
+                    const sectionSelect = document.getElementById('section');
+                    const roomNumberSelect = document.getElementById('room_number');
+                    const counterSelect = document.getElementById('counter');
+                    const manualAssignment = document.getElementById('manual-assignment');
+            
+                    assignmentTypeRadio.forEach(radio => {
+                        radio.addEventListener('change', function() {
+                            if (this.value === 'manual') {
+                                submitBtn.value = 'Assign';
+                                zoneSelect.disabled = false;
+                                sectionSelect.disabled = false;
+                                roomNumberSelect.disabled = false;
+                                counterSelect.disabled = false;
+                                manualAssignment.style.display = 'block';
+                            } else {
+                                submitBtn.value = 'Random Assign';
+                                zoneSelect.disabled = true;
+                                sectionSelect.disabled = true;
+                                roomNumberSelect.disabled = true;
+                                counterSelect.disabled = true;
+                                manualAssignment.style.display = 'none';
+                            }
+                        });
+                    });
+                </script>            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+                <br><br><br><br><br><br><br>
+
+
+                {% include "footer.html" %}

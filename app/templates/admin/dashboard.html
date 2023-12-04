@@ -1,0 +1,122 @@
+{% include "header.html" %}
+        <!-- /. NAV SIDE  -->
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 50px;
+            }
+            
+            h1 {
+                color: #333;
+            }
+            
+            form {
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: #333;
+            }
+            
+            select,
+            input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            #manual-assignment {
+                display: block;
+            }
+            
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+            
+            #submit-btn {
+                background-color: #4CAF50;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            
+            #submit-btn:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            
+        </style>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">final report/ assigned data</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+                {% include 'admin/navbar_admin.html' %}
+                
+
+               
+                <br>
+                <!-- /. ROW  -->
+                <div class="col-auto text-right float-right ml-auto">
+                    <a href="{% url "download_dashboard" %}" class="btn btn-outline-primary mr-2" target="_blank"><i class="fa fa-download"></i> Download/Print</a>
+                    
+                </div><br>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                       <div class="card card-table">
+                          <div class="card-body">
+                             <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0 datatable" style="display: block; overflow-x: auto; white-space: nowrap;">
+                                   <thead>
+                                        <tr>
+                                            <th>Zone name</th>
+                                            <th>Section name</th>
+                                            <th>Room name</th>
+                                            <th>Counter number</th>
+                                            <th>Assigned Members</th>
+                                        </tr>
+                                    </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item.zone.name }}</td>
+                    <td>{{ item.section.name }}</td>
+                    <td>{{ item.room.name }}</td>
+                    <td>{{ item.counter.name }}</td>
+                    <td>
+                        {% for assignment in item.assigned_members %}
+                            {{ assignment.member.name }} ({{ assignment.member.designation }}) <br>
+                        {% empty %}
+                            No assigned members
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<br><br><br><br><br><br>
+            
+                <a href="{% url 'admin_home' %}"></i> Go Back Home</a>
+            
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                {% include "footer.html" %}

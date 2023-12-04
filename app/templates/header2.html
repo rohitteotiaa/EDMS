@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exevision Documentation Management System</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="/static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="/static/assets/css/font-awesome.css" rel="stylesheet" />
+       <!--CUSTOM BASIC STYLES-->
+    <link href="/static/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="/static/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">VENUS EDMS</a>
+            </div>
+
+            
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            
+                            <img src="/{{user.profile_pic}}" class="img-thumbnail" />
+                           
+
+                            <div class="inner-text">
+                                {{user.first_name}} {{user.last_name}}
+                            <br />
+                                <small>Last Login :{{user.last_login}}</small>
+                            </div>
+                        </div>
+
+
+                    </li>
+
+
+                    <li>
+                        <a class="active-menu" href="{% url 'superuser_home2' %}"><i class="fa fa-dashboard "></i>Dashboard</a>
+                    </li>
+                    {% comment %} <li>
+                        <a href="#"><i class="fa fa-desktop "></i>Documents <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level"> {% endcomment %}
+                            <!-- <li>
+                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Tabs & Panels</a>
+                            </li>
+                            <li>
+                                <a href="notification.html"><i class="fa fa-bell "></i>Notifications</a>
+                            </li>
+                             <li>
+                                <a href="progress.html"><i class="fa fa-circle-o "></i>Progressbars</a>
+                            </li>
+                             <li>
+                                <a href="buttons.html"><i class="fa fa-code "></i>Buttons</a>
+                            </li> -->
+                             
+                           
+                    <li>
+                        <a href="{% url 'assignment_page2' %}"><i class="fa fa-sign-in "></i>Assign Data</a>
+                        
+                    </li>
+                    <li>
+                        <a href="{% url 'dashboard2' %}"><i class="fa fa-sign-in "></i>Final Report</a>
+                        
+                    </li>
+                    <li>
+                        <a href="{% url 'upload_csv2' %}"><i class="fa fa-sign-in "></i>Upload CSV/EXCEL</a>
+                        
+                    </li>
+                    <li>
+                        <a href="{% url 'upload_post2' %}"><i class="fa fa-sign-in "></i>Upload Post/CSV</a>
+                        
+                    </li>
+                            
+                           
+                        {% comment %} </ul>
+                    </li> {% endcomment %}
+                     
+                    {% comment %} <li>
+                        <a href="#"><i class="fa fa-table "></i>Data Tables <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level"> {% endcomment %}
+                           
+{% comment %}                              
+                        </ul>
+                    </li> {% endcomment %}
+                     {% comment %} <li>
+                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            {% endcomment %}
+                            
+                            
+                          
+                            <li>
+                                <a href="{% url 'addcustomuser2' %}"><i class="fa fa-user"></i>Add User</a>
+                               
+                            </li>
+                            <li>
+                                <a href="{% url 'addbasicuser2' %}"><i class="fa fa-users"></i>Add BasicUser</a>
+                               
+                            </li>
+                             
+                            
+                            <li>
+                                <a href="{% url 'viewuser2' %}"><i class="fa fa-desktop "></i>View User </a>
+                            </li>
+                            
+                             <li>
+                                <a href="{% url 'viewbasicuser2'%}"><i class="fa fa-desktop "></i>View BasicUser</a>
+                               
+                            </li>
+                           
+                        {% comment %} </ul>
+                    </li> {% endcomment %}
+              
+
+                                                              
+                          
+                    <li>
+                        <a href="{% url 'send_message_admin2' %}"><i class="fa fa-comment "></i>Message to Admin</a>
+                        
+                    </li>
+                            <li>
+                                <a href="{% url 'send_message_basicuser2' %}"><i class="fa fa-comment "></i>Message to Basicuser</a>
+                                
+                            </li>
+                            <li>
+                                <a href="{% url 'send_message_user2' %}"><i class="fa fa-comment "></i>Message to Users/Emp</a>
+                                
+                            </li>
+                            <li>
+                                <a href="{% url 'message_from_admin' %}"><i class="fa fa-comment "></i>Message From Admin</a>
+                                
+                            </li>
+                            <li>
+                                <a href="{% url 'message_from_basicuser2' %}"><i class="fa fa-comment "></i>Message From Basicuser</a>
+                                
+                            </li>
+                            <li>
+                                <a href="{% url 'message_from_user2' %}"><i class="fa fa-comment "></i>Message From Users/Emp</a>
+                                
+                            </li>
+{% comment %}                            
+                        </ul>
+                    </li> {% endcomment %}
+
+                    
+                    <li>
+                        <a href="{% url 'login' %}"><i class="fa fa-sign-in "></i>Login Page</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap "></i>Multilevel Link <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                          
+                            <li>
+                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#"><i class="fa fa-plus "></i>Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-comments-o "></i>Third Level Link</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        </ul>
+                        <li>
+                            <a href="#"><i class="fa fa-bicycle "></i>Second Level Link</a>
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-flask "></i>Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-flask "></i>Third Level Link</a>
+                        </li>
+                    </li>
+                   
+                   
+                </ul>
+
+            </div>
+
+        </nav>

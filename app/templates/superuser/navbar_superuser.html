@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/static/style5.css">
+
+<nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">VenusGlobal</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">VenusGlobal</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="{% url 'superuser_home2' %}">Home/होम </a></li>
+          {% comment %} <li>
+            <a href="#">HTML & CSS</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Login Forms</a></li>
+              <li><a href="#">Card Design</a></li>
+              <li class="more">
+                <span><a href="#">More</a>
+                <i class='bx bxs-chevron-right arrow more-arrow'></i>
+              </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="#">Neumorphism</a></li>
+                  <li><a href="#">Pre-loader</a></li>
+                  <li><a href="#">Glassmorphism</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li> {% endcomment %}
+          <li>
+            <a href="#">Add & View Users</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+               <li><a href="{% url 'addbasicuser2' %}">Add BasicUser/व्यवस्थापक जोड़ें</a></li>
+              
+              <li><a href="{% url 'viewbasicuser2'%}">View BasicUser/व्यवस्थापक देखें</a></li>
+                <li><a href="{% url 'login' %}">Login Page/लॉग इन</a></li>
+
+              
+               </ul>
+          </li>
+
+          <li>
+            <a href="#">Messages</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+                <li><a href="{% url 'send_message_admin2' %}">Message To Admin/संदेश मास्टर व्यवस्थापक को</a></li>
+                <li><a href="{% url 'send_message_basicuser2' %}">Message To BasicUser/संदेश व्यवस्थापक को</a></li>
+                <li><a href="{% url 'send_message_user2' %}">Message To User/संदेश उपयोगकर्ता को</a></li>
+                <li><a href="{% url 'message_from_admin' %}">Message from Admin/संदेश मास्टर व्यवस्थापक से संदेश</a></li>
+                <li><a href="{% url 'message_from_basicuser2' %}">Message from BasicUser/व्यवस्थापक से संदेश</a></li>
+                <li><a href="{% url 'message_from_user2' %}">Message from User/उपयोगकर्ता से संदेश</a></li>
+                    
+            </ul>  
+          </li>
+
+
+
+          <li>
+            <a href="#">Assign Data</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+              <li><a href="{% url 'assignment_page2' %}">Assign Data/डेटा असाइन करें</a></li>
+              <li><a href="{% url 'dashboard2' %}">Final Report/अंतिम रिपोर्ट</a></li>
+              <li><a href="{% url 'upload_csv2' %}">Upload CSV/EXCEL/सीएसवी/एक्सेल अपलोड करें</a></li>
+              <li><a href="{% url 'upload_post2' %}">Upload Post/CSV/पोस्ट/सीएसवी अपलोड करें</a></li>
+            </ul>  
+          </li>
+
+          <li>
+            <a href="#">Special Duties</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+                <li><a href="{% url 'unassign_and_assign_special_duty2' %}">Assign Manager Special Duty/प्रबंधक को विशेष कर्तव्य सौंपें</a></li>
+                <li><a href="{% url 'unassign_teamleader_special_duty2' %}">Assign Team Leader Special Duty/टीम लीडर को विशेष कर्तव्य सौंपें</a></li>
+                <li><a href="{% url 'unassign_clerk_special_duty2' %}">Assign Clerk Special Duty/क्लर्क को विशेष कर्तव्य सौंपें</a></li>
+                <li><a href="{% url 'special_duty_view2' %}">Special Duty View/विशेष कर्तव्य दृश्य</a></li>
+            </ul>  
+          </li>
+
+          
+        </ul>
+      </div>
+      <div class="search-box">
+        
+        <a href="{% url 'logout' %}"><i class="fa fa-sign-out" style="font-size:36px"></i></a>
+
+      </div>
+    </div>
+  </nav>
+  <script src="/static/script5.js"></script>
